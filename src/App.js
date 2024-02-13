@@ -1,33 +1,73 @@
-/* criando meu primeiro componente react!
-
--Toda aplicação que a gente usar o React, temos que dar um "import React from 'react'"!
-
-*/
-
-//JSX
-
-import React from 'react'
-import { Container, H1, Image, ContainerItens, InputLabel, Input, Button } from "./style";
-import People from './assets/peoples.svg'
+import React, { useState, useRef } from 'react'
+import axios from 'axios'
+import { Container, H1, Image, ContainerItens, InputLabel, Input, Button, User } from "./style";
+import HomeImage from './assets/home.svg'
+import Arrow from './assets/arrow.svg'
+import Trash from './assets/trash.svg'
 
 const App = () => {
 
+
+  const [users, setUsers] = useState([])
+  const inputName = useRef()
+  const inputAge = useRef()
+
+
+  async function addNewUser() {
+
+   const { data: newUser } = await axios.post("http://localhost:3001/projects/",
+      {
+        name: inputName.current.value,
+        age: inputAge.current.value
+      })
+
+    setUsers([...users, newUser])  
+
+    
+      const {data: newUsers} = await axios.get("http://localhost:3001/projects/")
+
+      setUsers(newUsers)
+
+  }
+
+
+
+
+  function deletUser(userId) {
+    const newUsers = users.filter(user => user.id !== userId)
+
+    setUsers(newUsers)
+  }
+
   return (<Container>
-    <Image />
+    <Image alt='Logo do site de cadastro' src={HomeImage} />
     <ContainerItens>
 
-      <H1>Olá!</H1>
+      <H1>Easy
+        <br />
+        SignUp</H1>
 
       <InputLabel>Nome</InputLabel>
-      <Input placeholder='Nome'/>
+      <Input ref={inputName} placeholder='Nome' />
       <InputLabel>Idade</InputLabel>
-      <Input placeholder='Idade'/>
+      <Input ref={inputAge} placeholder='Idade' />
 
-      <Button>Cadastrar</Button>
+      <Button onClick={addNewUser} >Cadastrar <img alt='Seta' src={Arrow} /></Button>
+      <ul>
+        {users.map(user => (
+
+          <User key={user.id}>
+            <p>{user.name}</p> <p>{user.age}</p>
+            <button onClick={() => deletUser(user.id)}> <img src={Trash} alt='Botão com ícone de lata de lixo' /> </button>
+          </User>
+        ))
+        }
+      </ul>
 
     </ContainerItens>
   </Container>)
 
 }
 
-export default App // isto porque no index.js estamos importando este componente, para podermos renderizar
+
+export default App
