@@ -30,11 +30,16 @@ const App = () => {
 
   }
 
-  // React Hook: useEffect -> Efeito Colateral! (dois parâmetros: função anônima e o segundo, um array.)
+  /* React Hook: useEffect -> Efeito Colateral! (dois parâmetros: função anônima e o segundo, um array.) 
+  
+    Pode ser chamado em duas ocasiões:
+    - Quando minha aplicação inicia;
+    - Quando um estado que está no array de dependência do useEffect é alterado.
+  */
 
     useEffect(() => {
-
-    }, [])
+        console.log("Fui chamado")
+    }, [users])
 
 
 
