@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import axios from 'axios'
 import { Container, H1, Image, ContainerItens, InputLabel, Input, Button, User } from "./style";
 import HomeImage from './assets/home.svg'
@@ -30,6 +30,11 @@ const App = () => {
 
   }
 
+  // React Hook: useEffect -> Efeito Colateral! (dois parâmetros: função anônima e o segundo, um array.)
+
+    useEffect(() => {
+
+    }, [])
 
 
 
