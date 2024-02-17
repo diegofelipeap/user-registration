@@ -15,31 +15,31 @@ const App = () => {
 
   async function addNewUser() {
 
-   const { data: newUser } = await axios.post("http://localhost:3001/projects/",
+    const { data: newUser } = await axios.post("http://localhost:3001/projects/",
       {
         name: inputName.current.value,
         age: inputAge.current.value
       })
 
-    setUsers([...users, newUser])  
+    setUsers([...users, newUser])
 
-    
-      const {data: newUsers} = await axios.get("http://localhost:3001/projects/")
 
-      setUsers(newUsers)
+    const { data: newUsers } = await axios.get("http://localhost:3001/projects/")
+
+    setUsers(newUsers)
 
   }
 
   /* React Hook: useEffect -> Efeito Colateral! (dois parâmetros: função anônima e o segundo, um array.) 
-  
     Pode ser chamado em duas ocasiões:
-    - Quando minha aplicação inicia;
-    - Quando um estado que está no array de dependência do useEffect é alterado.
-  */
+  - Quando minha aplicação inicia;
+  - Quando um estado que está no array de dependência do useEffect é alterado.
+    */
 
-    useEffect(() => {
-        console.log("Fui chamado")
-    }, [users])
+
+  useEffect(() => {
+    console.log("tô funcionando")
+  }, [users])
 
 
 
