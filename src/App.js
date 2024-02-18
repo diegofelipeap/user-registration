@@ -36,19 +36,20 @@ const App = () => {
 
 
   useEffect(() => { //Não aceita async function, sendo necessário criar uma dentro do useEffect p/ funcionar. 
-   async function fetchUsers(){
+    async function fetchUsers() {
 
       const { data: newUsers } = await axios.get("http://localhost:3001/projects/")
       setUsers(newUsers)
-   }
-   fetchUsers()
+    }
+    fetchUsers()
 
-    
+
   }, [])
 
 
 
-  function deletUser(userId) {
+  async function deletUser(userId) {
+    await axios.delete(`http://localhost:3001/projects/${userId}`)
     const newUsers = users.filter(user => user.id !== userId)
 
     setUsers(newUsers)
