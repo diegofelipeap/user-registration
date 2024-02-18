@@ -24,9 +24,7 @@ const App = () => {
     setUsers([...users, newUser])
 
 
-    const { data: newUsers } = await axios.get("http://localhost:3001/projects/")
 
-    setUsers(newUsers)
 
   }
 
@@ -37,9 +35,16 @@ const App = () => {
     */
 
 
-  useEffect(() => {
-    console.log("tô funcionando")
-  }, [users])
+  useEffect(() => { //Não aceita async function, sendo necessário criar uma dentro do useEffect p/ funcionar. 
+   async function fetchUsers(){
+
+      const { data: newUsers } = await axios.get("http://localhost:3001/projects/")
+      setUsers(newUsers)
+   }
+   fetchUsers()
+
+    
+  }, [])
 
 
 
