@@ -1,32 +1,16 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Container, H1, Image, ContainerItens, InputLabel, Input, Button, User } from "./style";
-import HomeImage from './assets/home.svg'
-import Arrow from './assets/arrow.svg'
-import Trash from './assets/trash.svg'
+import { Container, H1, Image, ContainerItens, Button, User } from "./style";
+import Peoples from '../../assets/peoples.svg'
+import Arrow from '../../assets/arrow.svg'
+import Trash from '../../assets/trash.svg'
 
-const App = () => {
+const Users = () => {
 
 
   const [users, setUsers] = useState([])
-  const inputName = useRef()
-  const inputAge = useRef()
 
 
-  async function addNewUser() {
-
-    const { data: newUser } = await axios.post("http://localhost:3001/projects/",
-      {
-        name: inputName.current.value,
-        age: inputAge.current.value
-      })
-
-    setUsers([...users, newUser])
-
-
-
-
-  }
 
   /* React Hook: useEffect -> Efeito Colateral! (dois parâmetros: função anônima e o segundo, um array.) 
     Pode ser chamado em duas ocasiões:
@@ -56,19 +40,12 @@ const App = () => {
   }
 
   return (<Container>
-    <Image alt='Logo do site de cadastro' src={HomeImage} />
+    <Image alt='Logo da tela de registro' src={Peoples} />
     <ContainerItens>
 
-      <H1>Easy
-        <br />
-        SignUp</H1>
+      <H1>Usuários</H1>
 
-      <InputLabel>Nome</InputLabel>
-      <Input ref={inputName} placeholder='Nome' />
-      <InputLabel>Idade</InputLabel>
-      <Input ref={inputAge} placeholder='Idade' />
 
-      <Button onClick={addNewUser} >Cadastrar <img alt='Seta' src={Arrow} /></Button>
       <ul>
         {users.map(user => (
 
@@ -80,10 +57,12 @@ const App = () => {
         }
       </ul>
 
+      <Button to="/"> <img alt='Seta' src={Arrow} /> Voltar </Button>
+
     </ContainerItens>
   </Container>)
 
 }
 
 
-export default App
+export default Users

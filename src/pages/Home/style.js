@@ -1,5 +1,6 @@
 import styled from 'styled-components'
-import Background from './assets/background1.svg'
+import Background from '../../assets/background1.svg'
+import { Link } from "react-router-dom";
 
 
 export const Container = styled.div`
@@ -62,11 +63,12 @@ export const Input = styled.input`
     margin-bottom: 25px;
 
 `
-export const Button = styled.button`
+export const Button = styled(Link)`
     background: rgba(0, 0, 0, 0.8);
     width: 342px;
     height: 74px;
     border-radius: 14px;
+    margin-top: 120px;
     font-size: 17px;
     font-weight: 700;
     line-height: 28px;
@@ -80,35 +82,5 @@ export const Button = styled.button`
 
     &:hover{ opacity:0.9; } 
     &:active{ background: #000; } 
-
-`
-
-export const User = styled.li`
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    border-radius: 14px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    outline: none;
-    border: none;
-    background: rgba(255, 255, 255, 0.25);
-    width: 342px;
-    height: 58px;
-    color: #fff;
-    margin-top: 20px;
-
-p{
-    font-size: 20px;
-    line-height: 28px;
-    font-style: normal;
-    font-weight: normal;
-}
-
-button{
-    background: none;
-    border: 0;
-    cursor: pointer;
-    &:active{ opacity:0.8; }
-}
 
 `
