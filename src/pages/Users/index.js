@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { useHistory } from 'react-router-dom'; //Novo React Hook: History!!!
+import { useNavigate } from 'react-router-dom'; //Novo React Hook da r.r.d. v6: Navigate!
 import axios from 'axios'
 import { Container, H1, Image, ContainerItens, Button, User } from "./style";
 import Peoples from '../../assets/peoples.svg'
@@ -8,7 +8,7 @@ import Trash from '../../assets/trash.svg'
 
 const Users = () => {
 
-  const history = useHistory()
+  const navigate = useNavigate()
 
   const [users, setUsers] = useState([])
 
@@ -41,6 +41,10 @@ const Users = () => {
     setUsers(newUsers)
   }
 
+  function goBackPage() {
+    navigate("/")
+  }
+
   return (<Container>
     <Image alt='Logo da tela de registro' src={Peoples} />
     <ContainerItens>
@@ -59,7 +63,7 @@ const Users = () => {
         }
       </ul>
 
-      <Button to="/"> <img alt='Seta' src={Arrow} /> Voltar </Button>
+      <Button onClick={goBackPage}> <img alt='Seta' src={Arrow} /> Voltar </Button>
 
     </ContainerItens>
   </Container>)

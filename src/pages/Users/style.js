@@ -9,7 +9,8 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 
 `
 export const Image = styled.img`
@@ -22,7 +23,8 @@ export const ContainerItens = styled.div`
     padding: 50px 36px;
     display: flex;
     flex-direction: column;
-    height: 72vh;
+    height: 100;
+    min-height: calc(75vh - 170px);
     backdrop-filter: blur(45px);
 
 `
