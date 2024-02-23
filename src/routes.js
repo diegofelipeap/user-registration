@@ -9,14 +9,16 @@ function Routes() {
 
 
     return (
-        <Switch>
-            <Router>
-                <Route exact path="/" component={Home} />
-                <Route exact path="usuarios" component={Users} />
-            </Router>
-        </Switch>
 
-    )
+        <Router>
+            <Switch>
+                <Route exact path="/" component={Home} />
+                <Route exact path="/usuarios" component={Users} />
+            </Switch>
+        </Router>
+
+
+    )   
 
 
 }

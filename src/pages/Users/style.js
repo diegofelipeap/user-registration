@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import Background from '../../assets/background2.svg'
-import { Link } from "react-router-dom";
 
 
 export const Container = styled.div`
@@ -38,7 +37,7 @@ export const H1 = styled.h1`
 
 `
 
-export const Button = styled(Link)`
+export const Button = styled.button`
     background: transparent;
     width: 342px;
     height: 74px;

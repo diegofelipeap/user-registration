@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useHistory } from 'react-router-dom'; //Novo React Hook: History!!!
 import axios from 'axios'
 import { Container, H1, Image, ContainerItens, Button, User } from "./style";
 import Peoples from '../../assets/peoples.svg'
@@ -7,6 +8,7 @@ import Trash from '../../assets/trash.svg'
 
 const Users = () => {
 
+  const history = useHistory()
 
   const [users, setUsers] = useState([])
 
