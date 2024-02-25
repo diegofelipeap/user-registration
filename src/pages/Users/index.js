@@ -9,8 +9,8 @@ import Trash from '../../assets/trash.svg'
 const Users = () => {
 
   const navigate = useNavigate()
-
   const [users, setUsers] = useState([])
+  const baseUrl = "https://first-node-project-five.vercel.app"
 
 
 
@@ -24,9 +24,10 @@ const Users = () => {
   useEffect(() => { //Não aceita async function, sendo necessário criar uma dentro do useEffect p/ funcionar. 
     async function fetchUsers() {
 
-      const { data: newUsers } = await axios.get("http://localhost:3001/projects/")
+      const { data: newUsers } = await axios.get(`${baseUrl}/projects`)
       setUsers(newUsers)
     }
+
     fetchUsers()
 
 
@@ -35,7 +36,7 @@ const Users = () => {
 
 
   async function deletUser(userId) {
-    await axios.delete(`http://localhost:3001/projects/${userId}`)
+    await axios.delete(`${baseUrl}/projects/${userId}`)
     const newUsers = users.filter(user => user.id !== userId)
 
     setUsers(newUsers)

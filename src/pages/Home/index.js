@@ -12,10 +12,11 @@ const Home = () => {
   const inputName = useRef()
   const inputAge = useRef()
 
+  const baseUrl = "https://first-node-project-five.vercel.app"
 
   async function addNewUser() {
 
-    const { data: newUser } = await axios.post("http://localhost:3001/projects/",
+    const { data: newUser } = await axios.post(`${baseUrl}/projects`,
       {
         name: inputName.current.value,
         age: inputAge.current.value
