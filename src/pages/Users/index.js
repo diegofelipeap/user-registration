@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'; //Novo React Hook da r.r.d. v6: Navigate!
 import axios from 'axios'
-import { Container, H1, Image, ContainerItens, Button, User } from "./style";
+import { Container, Image, ContainerItens, Button, User } from "./style";
 import Peoples from '../../assets/peoples.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
+import H1 from '../../components/Title'
 
 const Users = () => {
 

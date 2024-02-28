@@ -25,16 +25,6 @@ export const ContainerItens = styled.div`
     height: 72vh;
 
 `
-
-export const H1 = styled.h1`
-    color: #ffffff;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 40px;
-    text-align: center;
-    margin-bottom: 80px;
-
-`
 export const InputLabel = styled.p`
     font-style: normal;
     font-size: 18px;

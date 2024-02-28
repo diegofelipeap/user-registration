@@ -29,16 +29,6 @@ export const ContainerItens = styled.div`
 
 `
 
-export const H1 = styled.h1`
-    color: #ffffff;
-    font-size: 34px;
-    font-weight: 700;
-    line-height: 40px;
-    text-align: center;
-    margin-bottom: 80px;
-
-`
-
 export const Button = styled.button`
     background: transparent;
     width: 342px;
