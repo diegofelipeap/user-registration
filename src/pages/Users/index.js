@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'; //Novo React Hook da r.r.d. v6: Navigate!
 import axios from 'axios'
-import { Container, Image, Button, User } from "./style";
+import { Container, Image, User } from "./style";
 import Peoples from '../../assets/peoples.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 import H1 from '../../components/Title'
 import ContainerItens from '../../components/ContainerItens'
-
+import Button from '../../components/Button'
 const Users = () => {
 
   const navigate = useNavigate()
@@ -66,7 +66,7 @@ const Users = () => {
         }
       </ul>
 
-      <Button onClick={goBackPage}> <img alt='Seta' src={Arrow} /> Voltar </Button>
+      <Button isBack={true} onClick={goBackPage}> <img alt='Seta' src={Arrow} /> Voltar </Button>
 
     </ContainerItens>
   </Container>)

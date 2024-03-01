@@ -17,33 +17,6 @@ export const Image = styled.img`
     margin-top: 30px;
 
 `
-
-export const Button = styled.button`
-    background: transparent;
-    width: 342px;
-    height: 74px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 28px;
-    color: #FFFFFF;
-    border-radius: 14px;
-    border: 1px solid #FFF;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 120px;
-
-    &:hover{ opacity:0.9; } 
-    &:active{ background: #000; } 
-
-    img{
-        transform: rotateY(180deg);
-    }
-
-`
-
 export const User = styled.li`
     display: flex;
     justify-content: space-around;

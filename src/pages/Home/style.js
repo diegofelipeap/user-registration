@@ -43,24 +43,3 @@ export const Input = styled.input`
     margin-bottom: 25px;
 
 `
-export const Button = styled.button`
-    background: rgba(0, 0, 0, 0.8);
-    width: 342px;
-    height: 74px;
-    border-radius: 14px;
-    margin-top: 120px;
-    font-size: 17px;
-    font-weight: 700;
-    line-height: 28px;
-    color: #FFFFFF;
-    border: 0;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-
-    &:hover{ opacity:0.9; } 
-    &:active{ background: #000; } 
-
-`
