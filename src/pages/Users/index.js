@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'; //Novo React Hook da r.r.d. v6: Navigate!
 import axios from 'axios'
-import { Container, Image, ContainerItens, Button, User } from "./style";
+import { Container, Image, Button, User } from "./style";
 import Peoples from '../../assets/peoples.svg'
 import Arrow from '../../assets/arrow.svg'
 import Trash from '../../assets/trash.svg'
 import H1 from '../../components/Title'
+import ContainerItens from '../../components/ContainerItens'
 
 const Users = () => {
 
@@ -49,7 +50,7 @@ const Users = () => {
 
   return (<Container>
     <Image alt='Logo da tela de registro' src={Peoples} />
-    <ContainerItens>
+    <ContainerItens isBlur={true} /*props*/>
 
       <H1>Usuários</H1>
 

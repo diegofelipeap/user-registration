@@ -1,10 +1,11 @@
 import React, { useState, useRef } from 'react'
 import { useNavigate } from 'react-router-dom'; //Novo React Hook: History!!!
 import axios from 'axios'
-import { Container, Image, ContainerItens, InputLabel, Input, Button } from './style';
+import { Container, Image, InputLabel, Input, Button } from './style';
 import HomeImage from '../../assets/home.svg'
 import Arrow from '../../assets/arrow.svg'
 import H1 from '../../components/Title'
+import ContainerItens from '../../components/ContainerItens'
 
 const Home = () => {
 
