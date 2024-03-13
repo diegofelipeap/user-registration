@@ -1,6 +1,6 @@
 <h1>Readme em progresso!</h1>
 
-<h3>Algumas telas (para visualização prévia:</h3>
+<h3>Algumas telas (para visualização prévia):</h3>
 
 
 
